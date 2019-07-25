@@ -78,8 +78,9 @@ typedef NS_ENUM(NSInteger, RepeatInterval) {
     persistentState = [NSUserDefaults standardUserDefaults];
     FlutterLocalNotificationsPlugin* instance = [[FlutterLocalNotificationsPlugin alloc] init];
     if(@available(iOS 10.0, *)) {
-        UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
-        center.delegate = instance;
+        //Removed. This forked only purpose is to supply push notifications for Android.
+        //UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+        //center.delegate = instance;
     }
     [registrar addApplicationDelegate:instance];
     [registrar addMethodCallDelegate:instance channel:channel];
